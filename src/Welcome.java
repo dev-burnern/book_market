@@ -101,11 +101,14 @@ public class Welcome {
     public static void menuCartClear() {
         System.out.println("3. 장바구니 비우기");
     }
-    public static void menuCartAddItem() {
-        //매개변수 추가 및 출력 주석 처리
-        System.out.println("4. 장바구니에 항목 추가하기");
-        //도서 정보를 저장하는 메서드 호출
-        //도서 정보 출력
+    public static void menuCartAddItem(String[][] book) {
+//        System.out.println("4. 장바구니에 항목 추가하기");
+        BookList(book);
+        for (int i = 0; i < NUM_BOOK; i++) {
+            for (int j = 0; j < NUM_ITEM; j++)
+                System.out.print(book[i][j] + " | ");
+            System.out.println(" ");
+        }
     }
     public static void menuCartRemoveItemCount() {
         System.out.println("5. 장바구니의 항목 수량 줄이기");
