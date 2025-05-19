@@ -60,7 +60,7 @@ public class Welcome {
                         break;
                     case 4:
 //                        System.out.println("4. 장바구니에 항목 추가하기 : ");
-                        menuCartAddItem();
+                        menuCartAddItem(mBook);
                         break;
                     case 5:
 //                        System.out.println("5. 장바구니의 항목 수량 줄이기");
@@ -109,6 +109,11 @@ public class Welcome {
                 System.out.print(book[i][j] + " | ");
             System.out.println(" ");
         }
+        // 장바구니에 항목을 추가하지 않을 때 까지 반복하는 While문
+        // 도서 id 입력받기
+        // 입력된 도서의 id와 저장되어 있는 도서 정보의 id가 일치하는지 확인
+        // 일치하면 도서 정보의 numid와 flag 변수에 값을 변경하여 저장하고 반복문 종료
+
     }
     public static void menuCartRemoveItemCount() {
         System.out.println("5. 장바구니의 항목 수량 줄이기");
