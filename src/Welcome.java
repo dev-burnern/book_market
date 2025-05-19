@@ -105,7 +105,7 @@ public class Welcome {
             System.out.println("    " + mCartItem[i].getBookId() + " \t|");
             System.out.println("    " + mCartItem[i].getQuantity() + " \t\t|");
             System.out.println("    " + mCartItem[i].getTotalPrice());
-            System.out.println(" ");
+            System.out.println("  ");
         }
         System.out.println("--------------------------------");
     }
