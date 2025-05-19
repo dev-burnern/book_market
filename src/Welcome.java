@@ -117,16 +117,22 @@ public class Welcome {
             String str = input.nextLine();
 
             boolean flag = false;
+            int numId = -1;
+
             for (int i = 0; i < NUM_BOOK; i++) {
                 if (str.equals(book[i][0])) {
-                    int numId = -1;
+                    numId = i;
                     flag = true;
                     break;
                 }
             }
-            if (!flag) {
-                // 장바구니에 도서 추가 여부를 위한 입력값(Y 또는 N)을 받음
-                // 입력값(Y 또는 N)을 대문자로 변경하여 Y이면 '도서가 장바구니에 추가되었습니다' 출력
+            if (flag) {
+                System.out.println("장바구니에 추가하겠습니까? ");
+                str = input.nextLine();
+
+                if (str.toUpperCase().equals("Y")) {
+                    System.out.println(book[numId][0] + " 도서가 장바귄에 추가되었습니다.");
+                }
                 quit = true;
             }
             else
