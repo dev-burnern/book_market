@@ -16,6 +16,8 @@ public class Welcome {
         String greeting = "Welcome to Shopping Mall";
         String tagline = "Welcome to Book Market";
 
+        //종료 여부 설정 변수
+        //quit 변수가 true일때까지 계속 반복
         System.out.println("**************************************************");
         System.out.println("\t" + greeting);
         System.out.println("\t" + tagline);
@@ -37,6 +39,7 @@ public class Welcome {
             switch (n) {
                 case 1:
                     System.out.println("1. 현재 고객 정보 : ");
+                    //선택한 번호가 1일때 키보드로 입력된 고객 이름과 연락처 출력
                     break;
                 case 2:
                     System.out.println("2. 장바구니 상품 목록 보기 :");
