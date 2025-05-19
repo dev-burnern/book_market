@@ -100,11 +100,11 @@ public class Welcome {
     public static void menuCartItemList() {
         System.out.println("2. 장바구니 상품 목록");
         System.out.println("--------------------------------");
-        System.out.println("    도서ID \t    수량 \t    합계");
+        System.out.println("    도서ID \t\t|    수량 \t|    합계");
         for (int i = 0; i < mCartCount; i++) {
-            System.out.println("    " + mCartItem[i].getBookId() + " \t|");
-            System.out.println("    " + mCartItem[i].getQuantity() + " \t\t|");
-            System.out.println("    " + mCartItem[i].getTotalPrice());
+            System.out.print("    " + mCartItem[i].getBookId() + " \t|");
+            System.out.print("    " + mCartItem[i].getQuantity() + " \t\t|");
+            System.out.print("    " + mCartItem[i].getTotalPrice());
             System.out.println("  ");
         }
         System.out.println("--------------------------------");
@@ -166,7 +166,7 @@ public class Welcome {
         System.out.println("8. 종료");
     }
     public static void BookList(String[][] book){
-        book[0][1] = "ISBN1234";
+        book[0][0] = "ISBN1234";
         book[0][1] = "쉽게 배우는 JSP 웹 프로그래밍";
         book[0][2] = "27000";
         book[0][3] = "송미영";
@@ -174,7 +174,7 @@ public class Welcome {
         book[0][5] = "IT전문서";
         book[0][6] = "2018/10/08";
 
-        book[1][1] = "ISBN1235";
+        book[1][0] = "ISBN1235";
         book[1][1] = "안드로이드 프로그래밍";
         book[1][2] = "33000";
         book[1][3] = "우재남";
@@ -182,7 +182,7 @@ public class Welcome {
         book[1][5] = "IT전문서";
         book[1][6] = "2022/01/22";
 
-        book[2][1] = "ISBN1236";
+        book[2][0] = "ISBN1236";
         book[2][1] = "스크래치";
         book[2][2] = "22000";
         book[2][3] = "고광일";
