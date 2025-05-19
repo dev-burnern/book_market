@@ -125,6 +125,8 @@ public class Welcome {
                 }
             }
             if (!flag) {
+                // 장바구니에 도서 추가 여부를 위한 입력값(Y 또는 N)을 받음
+                // 입력값(Y 또는 N)을 대문자로 변경하여 Y이면 '도서가 장바구니에 추가되었습니다' 출력
                 quit = true;
             }
             else
