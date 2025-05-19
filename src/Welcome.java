@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Welcome {
     static final int NUM_BOOK = 3;
     static final int NUM_ITEM = 7;
+    static CartItem[] mCartItem = new CartItem[NUM_BOOK];
+    static int mCartCount = 0;
 
     public static void main(String[] args) {
         String[][] mBook = new String[NUM_BOOK][NUM_ITEM];
