@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class Welcome {
-    // 도서의 개수에 대한 상수 NUM_BOOk 선언
-    // 도서 정보의 개수에 대한 상수 NUM_ITEM 선언
+    static final int NUM_BOOK = 3;
+    static final int NUM_ITEM = 7;
 
     public static void main(String[] args) {
-        //도서 정보를 저장할 mBook을 2차원 배열로 생성
+        String[][] mBook = new String[NUM_BOOK][NUM_ITEM];
 
         Scanner input = new Scanner(System.in);
 
@@ -116,4 +116,5 @@ public class Welcome {
     public static void menuExit() {
         System.out.println("8. 종료");
     }
+    // 도서 정보를 저장하는 메서드
 }
