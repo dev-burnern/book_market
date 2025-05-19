@@ -1,7 +1,12 @@
 import java.util.Scanner;
 
 public class Welcome {
+    // 도서의 개수에 대한 상수 NUM_BOOk 선언
+    // 도서 정보의 개수에 대한 상수 NUM_ITEM 선언
+
     public static void main(String[] args) {
+        //도서 정보를 저장할 mBook을 2차원 배열로 생성
+
         Scanner input = new Scanner(System.in);
 
         System.out.print("당신의 이름을 입력하세요");
