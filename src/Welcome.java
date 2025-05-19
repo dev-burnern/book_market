@@ -45,7 +45,9 @@ public class Welcome {
 //                        System.out.println("이름 " + userName + " 연락처 " + userMobile);
                         menuIntroduction(userName, userMobile);
                         break;
+                    //기존 출력문을 주석처리 후 메뉴 선택별 메서드 호출
                     case 2:
+
                         System.out.println("2. 장바구니 상품 목록 보기 :");
                         break;
                     case 3:
@@ -82,4 +84,5 @@ public class Welcome {
         System.out.println("현재 고객 정보 : ");
         System.out.println("이름 " + name + " 연락처 " + mobile);
     }
+    // 목록별 메서드 작성
 }
