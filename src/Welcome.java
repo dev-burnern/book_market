@@ -34,17 +34,16 @@ public class Welcome {
 
             System.out.print("메뉴 번호를 선택해주세요.");
             int n = input.nextInt();
-            System.out.println(n + "번을 선택했습니다."); // 주석 처리
+//            System.out.println(n + "번을 선택했습니다.");
 
             if (n < 1 || n > 8) {
                 System.out.println("1부터 8까지의 숫자를 입력하세요");
             } else {
                 switch (n) {
                     case 1:
-                        // 기본 내용 주석 처리
-                        System.out.println("1. 현재 고객 정보 : ");
-                        System.out.println("이름 " + userName + " 연락처 " + userMobile);
-                        // 고객 정보 출력 메서드 호출
+//                        System.out.println("1. 현재 고객 정보 : ");
+//                        System.out.println("이름 " + userName + " 연락처 " + userMobile);
+                        menuIntroduction(userName, userMobile);
                         break;
                     case 2:
                         System.out.println("2. 장바구니 상품 목록 보기 :");
@@ -79,5 +78,8 @@ public class Welcome {
         System.out.println("4. 영수증 표시하기 \t\t8. 종료");
         System.out.println("**************************************************");
     }
-    //입력 받은 고객 정보 메서드 선언 및 기존 내용 작성
+    public static void menuIntroduction(String name, int mobile) {
+        System.out.println("현재 고객 정보 : ");
+        System.out.println("이름 " + name + " 연락처 " + mobile);
+    }
 }
