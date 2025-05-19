@@ -98,7 +98,16 @@ public class Welcome {
         System.out.println("이름 " + name + " 연락처 " + mobile);
     }
     public static void menuCartItemList() {
-        System.out.println("2. 장바구니 상품 목록 보기");
+        System.out.println("2. 장바구니 상품 목록");
+        System.out.println("--------------------------------");
+        System.out.println("    도서ID \t    수량 \t    합계");
+        for (int i = 0; i < mCartCount; i++) {
+            System.out.println("    " + mCartItem[i].getBookId() + " \t|");
+            System.out.println("    " + mCartItem[i].getQuantity() + " \t\t|");
+            System.out.println("    " + mCartItem[i].getTotalPrice());
+            System.out.println(" ");
+        }
+        System.out.println("--------------------------------");
     }
     public static void menuCartClear() {
         System.out.println("3. 장바구니 비우기");
@@ -180,5 +189,15 @@ public class Welcome {
         book[2][4] = "컴퓨팅 사고력을 키우는 블록 코딩";
         book[2][5] = "컴퓨터입문";
         book[2][6] = "2019/06/10";
+    }
+    public static boolean isCartInBook(String bookId){
+        boolean flag = false;
+        for (int i = 0; i < mCartCount; i++) {
+            if (bookId == mCartItem[i].getBookId()) {
+                mCartItem[i].setQuantity(mCartItem[i].getQuantity() + 1);
+                flag = true;
+            }
+        }
+        return flag;
     }
 }
