@@ -30,7 +30,7 @@ public class Welcome {
             System.out.println("4. 영수증 표시하기 \t\t8. 종료");
             System.out.println("**************************************************");
              */
-            // 메뉴 목록 출력 메서드 호출
+            menuIntroduction();
 
             System.out.print("메뉴 번호를 선택해주세요.");
             int n = input.nextInt();
@@ -41,8 +41,10 @@ public class Welcome {
             } else {
                 switch (n) {
                     case 1:
+                        // 기본 내용 주석 처리
                         System.out.println("1. 현재 고객 정보 : ");
                         System.out.println("이름 " + userName + " 연락처 " + userMobile);
+                        // 고객 정보 출력 메서드 호출
                         break;
                     case 2:
                         System.out.println("2. 장바구니 상품 목록 보기 :");
@@ -69,5 +71,13 @@ public class Welcome {
             } //if~else문
         } //while문
     }//main 메서드
-    //메뉴 목록 출력 메서드 선언 및 메뉴 목록 작성
+    public static void menuIntroduction() {
+        System.out.println("**************************************************");
+        System.out.println("1. 고객 정보 확인하기 \t\t5. 바구니에 항목 추가하기");
+        System.out.println("2. 장바구니 상품 목록 보기 \t6. 장바구니의 항목 수량 줄이기");
+        System.out.println("3. 장바구니 비우기 \t\t7. 장바구니의 항목 삭제하기");
+        System.out.println("4. 영수증 표시하기 \t\t8. 종료");
+        System.out.println("**************************************************");
+    }
+    //입력 받은 고객 정보 메서드 선언 및 기존 내용 작성
 }
