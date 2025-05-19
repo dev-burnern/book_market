@@ -45,28 +45,34 @@ public class Welcome {
 //                        System.out.println("이름 " + userName + " 연락처 " + userMobile);
                         menuIntroduction(userName, userMobile);
                         break;
-                    //기존 출력문을 주석처리 후 메뉴 선택별 메서드 호출
                     case 2:
-
-                        System.out.println("2. 장바구니 상품 목록 보기 :");
+//                        System.out.println("2. 장바구니 상품 목록 보기 :");
+                        menuCartItemList();
                         break;
                     case 3:
-                        System.out.println("3. 장바구니 비우기");
+//                        System.out.println("3. 장바구니 비우기");
+                        menuCartClear();
                         break;
                     case 4:
-                        System.out.println("4. 장바구니에 항목 추가하기 : ");
+//                        System.out.println("4. 장바구니에 항목 추가하기 : ");
+                        menuCartAddItem();
                         break;
                     case 5:
-                        System.out.println("5. 장바구니의 항목 수량 줄이기");
+//                        System.out.println("5. 장바구니의 항목 수량 줄이기");
+                        menuCartRemoveItemCount();
                         break;
                     case 6:
-                        System.out.println("6. 장바구니의 항목 삭제하기");
+//                        System.out.println("6. 장바구니의 항목 삭제하기");
+                        menuCartRemoveItem();
                         break;
                     case 7:
-                        System.out.println("7. 영수증 표시하기");
+//                        System.out.println("7. 영수증 표시하기");
+                        menuCartBill();
                         break;
                     case 8:
-                        System.out.println("8. 종료");
+//                        System.out.println("8. 종료");
+                        menuExit();
+                        quit = true;
                         break;
                 } // switch문
             } //if~else문
@@ -84,5 +90,25 @@ public class Welcome {
         System.out.println("현재 고객 정보 : ");
         System.out.println("이름 " + name + " 연락처 " + mobile);
     }
-    // 목록별 메서드 작성
+    public static void menuCartItemList() {
+        System.out.println("2. 장바구니 상품 목록 보기");
+    }
+    public static void menuCartClear() {
+        System.out.println("3. 장바구니 비우기");
+    }
+    public static void menuCartAddItem() {
+        System.out.println("4. 장바구니에 항목 추가하기");
+    }
+    public static void menuCartRemoveItemCount() {
+        System.out.println("5. 장바구니의 항목 수량 줄이기");
+    }
+    public static void menuCartRemoveItem() {
+        System.out.println("6. 장바구니의 항목 삭제하기");
+    }
+    public static void menuCartBill() {
+        System.out.println("7. 영수증 표시하기");
+    }
+    public static void menuExit() {
+        System.out.println("8. 종료");
+    }
 }
