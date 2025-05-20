@@ -53,7 +53,7 @@ public class Welcome {
                     case 1:
 //                        System.out.println("1. 현재 고객 정보 : ");
 //                        System.out.println("이름 " + userName + " 연락처 " + userMobile);
-                        menuIntroduction(userName, userMobile);
+                        menuGuestInfo(userName, userMobile);
                         break;
                     case 2:
 //                        System.out.println("2. 장바구니 상품 목록 보기 :");
@@ -96,9 +96,9 @@ public class Welcome {
         System.out.println("4. 영수증 표시하기 \t\t8. 종료");
         System.out.println("**************************************************");
     }
-    public static void menuIntroduction(String name, int mobile) {
+    public static void menuGuestInfo(String name, int mobile) {
         System.out.println("현재 고객 정보 : ");
-        System.out.println("이름 " + name + " 연락처 " + mobile);
+        System.out.println("이름 " + mUser.getName() + "   연락처 " + mUser.getPhone());
     }
     public static void menuCartItemList() {
         System.out.println("2. 장바구니 상품 목록");
