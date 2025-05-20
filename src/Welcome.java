@@ -5,6 +5,7 @@ public class Welcome {
     static final int NUM_ITEM = 7;
     static CartItem[] mCartItem = new CartItem[NUM_BOOK];
     static int mCartCount = 0;
+    static User mUser;
 
     public static void main(String[] args) {
         String[][] mBook = new String[NUM_BOOK][NUM_ITEM];
@@ -16,6 +17,8 @@ public class Welcome {
 
         System.out.print("연락처를 입력하세요 :");
         int userMobile = input.nextInt();
+
+        mUser = new User(userName, userMobile);
 
 //        System.out.println("Welcome to Shopping Mall");
 //        System.out.println("Welcome to BookMarket");
