@@ -46,8 +46,8 @@ public class Welcome {
             int n = input.nextInt();
 //            System.out.println(n + "번을 선택했습니다.");
 
-            if (n < 1 || n > 8) {
-                System.out.println("1부터 8까지의 숫자를 입력하세요");
+            if (n < 1 || n > 9) {
+                System.out.println("1부터 9까지의 숫자를 입력하세요");
             } else {
                 switch (n) {
                     case 1:
