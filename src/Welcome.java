@@ -84,6 +84,9 @@ public class Welcome {
                         menuExit();
                         quit = true;
                         break;
+                    case 9:
+                        menuAdminLogin();
+                        break;
                 } // switch문
             } //if~else문
         } //while문
