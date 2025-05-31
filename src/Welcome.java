@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 public class Welcome {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in); // input 객체 생성
 
 //        System.out.println("Welcome to Shopping Mall");
 //        System.out.println("Welocme to Book Market");
