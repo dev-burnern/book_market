@@ -29,36 +29,39 @@ public class Welcome {
         int n = input.nextInt();
 //        System.out.println(n + "번 메뉴를 선택하셨습니다.");
 
-        if  (n < 1 || n > 8)
-            System.out.println("1부터 8까지의 메뉴 번호를 선택해주세요.");
-        else {
-            switch (n) {
-                case 1:
-                    System.out.println("현재 고객 정보 :");
-                    System.out.println("이름 : " + userName + ", 연락처 : " + userMobile);
-                    break;
-                case 2:
-                    System.out.println("장바구니 상품 목록 보기 :");
-                    break;
-                case 3:
-                    System.out.println("장바구니 비우기");
-                    break;
-                case 4:
-                    System.out.println("바구니에 항목 추가하기 : ");
-                    break;
-                case 5:
-                    System.out.println("장바구니의 항목 수량 줄이기");
-                    break;
-                case 6:
-                    System.out.println("장바구니의 항목 삭제하기");
-                    break;
-                case 7:
-                    System.out.println("영수증 표시하기");
-                    break;
-                case 8:
-                    System.out.println("프로그램을 종료합니다.");
-                    break;
-            }
-        }
+        boolean quit = false;
+        while (!quit) {
+            if  (n < 1 || n > 8)
+                System.out.println("1부터 8까지의 메뉴 번호를 선택해주세요.");
+            else {
+                switch (n) {
+                    case 1:
+                        System.out.println("현재 고객 정보 :");
+                        System.out.println("이름 : " + userName + ", 연락처 : " + userMobile);
+                        break;
+                    case 2:
+                        System.out.println("장바구니 상품 목록 보기 :");
+                        break;
+                    case 3:
+                        System.out.println("장바구니 비우기");
+                        break;
+                    case 4:
+                        System.out.println("바구니에 항목 추가하기 : ");
+                        break;
+                    case 5:
+                        System.out.println("장바구니의 항목 수량 줄이기");
+                        break;
+                    case 6:
+                        System.out.println("장바구니의 항목 삭제하기");
+                        break;
+                    case 7:
+                        System.out.println("영수증 표시하기");
+                        break;
+                    case 8:
+                        System.out.println("프로그램을 종료합니다.");
+                        break;
+                } //switch문 종료
+            } //if문 종료
+        } //while문 종료
     }
 }
