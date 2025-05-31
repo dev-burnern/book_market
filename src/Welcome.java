@@ -13,7 +13,7 @@ public class Welcome {
         String userName = input.next();
 
         System.out.print("연락처를 입력하세요 : ");
-        int userMobile = input.nextInt();
+        String userMobile = input.next();
 
 //        System.out.println("Welcome to Shopping Mall");
 //        System.out.println("Welocme to Book Market");
@@ -21,9 +21,7 @@ public class Welcome {
         String greeting = "Welcome to Shopping Mall";
         String tagline = "Welcome to Book Market";
 
-        System.out.println("**********************************************************");
-        System.out.println("\t\t\t\t" + greeting);
-        System.out.println("\t\t\t\t" + tagline);
+
 
         /*
         System.out.println("***********************************************************");
@@ -36,12 +34,18 @@ public class Welcome {
 
         menuIntroduction();
 
-        System.out.print("메뉴 번호를 선택해주세요 :");
-        int n = input.nextInt();
+
 //        System.out.println(n + "번 메뉴를 선택하셨습니다.");
 
         boolean quit = false;
         while (!quit) {
+            System.out.println("\t\t\t\t" + greeting);
+            System.out.println("\t\t\t\t" + tagline);
+            System.out.println("***********************************************************");
+
+            System.out.print("메뉴 번호를 선택해주세요 :");
+            int n = input.nextInt();
+
             if  (n < 1 || n > 8)
                 System.out.println("1부터 8까지의 메뉴 번호를 선택해주세요.");
             else {
@@ -93,7 +97,7 @@ public class Welcome {
         System.out.println("***********************************************************");
     }
 
-    public static void menuGuestInfo(String name, int mobile) {
+    public static void menuGuestInfo(String name, String mobile) {
         System.out.println("현재 고객 정보 :");
         System.out.println("이름 : " + name + ", 연락처 : " + mobile);
     }
@@ -111,7 +115,7 @@ public class Welcome {
         BookList(book);
         for (int i = 0; i < NUM_BOOK; i++) {
             for (int j = 0; j < NUM_ITEM; j++)
-                System.out.println(book[i][j] + " | ");
+                System.out.print(book[i][j] + " | ");
             System.out.println();
         }
         boolean quit = false;
