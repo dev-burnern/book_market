@@ -61,7 +61,7 @@ public class Welcome {
                         break;
                     case 4:
 //                        System.out.println("바구니에 항목 추가하기 : ");
-                        menuCartAddItem();
+                        menuCartAddItem(mBook);
                         break;
                     case 5:
 //                        System.out.println("장바구니의 항목 수량 줄이기");
@@ -114,6 +114,29 @@ public class Welcome {
                 System.out.println(book[i][j] + " | ");
             System.out.println();
         }
+        boolean quit = false;
+        while (!quit) {
+            System.out.println("장바구니에 추가할 도서의 ID를 입력하세요.");
+
+            Scanner input = new Scanner(System.in);
+            String str = input.nextLine();
+
+            boolean flag = false;
+            int numId = -1;
+
+            for (int i = 0; i < NUM_BOOK; i++) {
+                if (str.equals(book[i][0])) {
+                    numId = i;
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (flag)
+                quit = true;
+            else
+                System.out.println("다시 입력해 주세요");
+        } // while문 종료
     }
 
     public static void menuCartRemoveItemCount() {
