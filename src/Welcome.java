@@ -35,6 +35,7 @@ public class Welcome {
             switch (n) {
                 case 1:
                     System.out.println("현재 고객 정보 :");
+                    System.out.println("이름 : " + userName + ", 연락처 : " + userMobile);
                     break;
                 case 2:
                     System.out.println("장바구니 상품 목록 보기 :");
