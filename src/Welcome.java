@@ -106,8 +106,14 @@ public class Welcome {
         System.out.println("3. 장바구니 비우기");
     }
 
-    public static void menuCartAddItem() {
-        System.out.println("4. 바구니에 항목 추가하기");
+    public static void menuCartAddItem(String[][] book) {
+//        System.out.println("4. 장바구니에 항목 추가하기");
+        BookList(book);
+        for (int i = 0; i < NUM_BOOK; i++) {
+            for (int j = 0; j < NUM_ITEM; j++)
+                System.out.println(book[i][j] + " | ");
+            System.out.println();
+        }
     }
 
     public static void menuCartRemoveItemCount() {
