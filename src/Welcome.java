@@ -132,8 +132,15 @@ public class Welcome {
                 }
             }
 
-            if (flag)
+            if (flag) {
+                System.out.println("장바구니에 추가하시곘습니까? Y | N");
+                str = input.nextLine();
+
+                if (str.toUpperCase().equals("Y")) {
+                    System.out.println(book[numId][0] + " 도서를 장바구니에 추가했습니다.");
+                }
                 quit = true;
+            }
             else
                 System.out.println("다시 입력해 주세요");
         } // while문 종료
