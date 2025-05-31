@@ -42,8 +42,9 @@ public class Welcome {
             else {
                 switch (n) {
                     case 1:
-                        System.out.println("현재 고객 정보 :");
-                        System.out.println("이름 : " + userName + ", 연락처 : " + userMobile);
+//                        System.out.println("현재 고객 정보 :");
+//                        System.out.println("이름 : " + userName + ", 연락처 : " + userMobile);
+                        menuGuestInfo(userName, userMobile);
                         break;
                     case 2:
                         System.out.println("장바구니 상품 목록 보기 :");
@@ -78,5 +79,10 @@ public class Welcome {
         System.out.println(" 3. 장바구니 비우기 \t\t\t6. 장바구니의 항목 삭제하기");
         System.out.println(" 7. 영수증 표시하기 \t\t\t8. 종료");
         System.out.println("***********************************************************");
+    }
+
+    public static void menuGuestInfo(String name, int mobile) {
+        System.out.println("현재 고객 정보 :");
+        System.out.println("이름 : " + name + ", 연락처 : " + mobile);
     }
 }
