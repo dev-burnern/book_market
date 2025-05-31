@@ -59,6 +59,7 @@ public class Welcome {
                         break;
                     case 8:
                         System.out.println("프로그램을 종료합니다.");
+                        quit = true;
                         break;
                 } //switch문 종료
             } //if문 종료
