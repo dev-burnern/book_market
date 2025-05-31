@@ -19,12 +19,18 @@ public class Welcome {
         System.out.println("**********************************************************");
         System.out.println("\t\t\t\t" + greeting);
         System.out.println("\t\t\t\t" + tagline);
+
+        /*
         System.out.println("***********************************************************");
         System.out.println(" 1. 고객 정보 확인하기 \t\t4. 바구니에 항목 추가하기");
         System.out.println(" 2. 장바구니 상품 목록 보기 \t5. 장바구니의 항목 수량 줄이기");
         System.out.println(" 3. 장바구니 비우기 \t\t\t6. 장바구니의 항목 삭제하기");
         System.out.println(" 7. 영수증 표시하기 \t\t\t8. 종료");
         System.out.println("***********************************************************");
+         */
+
+        menuIntroduction();
+
         System.out.print("메뉴 번호를 선택해주세요 :");
         int n = input.nextInt();
 //        System.out.println(n + "번 메뉴를 선택하셨습니다.");
@@ -64,5 +70,13 @@ public class Welcome {
                 } //switch문 종료
             } //if문 종료
         } //while문 종료
+    } // main 메소드 종료
+    public static void menuIntroduction() {
+        System.out.println("***********************************************************");
+        System.out.println(" 1. 고객 정보 확인하기 \t\t4. 바구니에 항목 추가하기");
+        System.out.println(" 2. 장바구니 상품 목록 보기 \t5. 장바구니의 항목 수량 줄이기");
+        System.out.println(" 3. 장바구니 비우기 \t\t\t6. 장바구니의 항목 삭제하기");
+        System.out.println(" 7. 영수증 표시하기 \t\t\t8. 종료");
+        System.out.println("***********************************************************");
     }
 }
