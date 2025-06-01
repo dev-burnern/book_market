@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Welcome {
     static final int NUM_BOOK = 3; // 도서의 개수에 대한 상수
     static final int NUM_ITEM = 7; // 각 도서에 대한 항목의 개수에 대한 상수
+    static CartItem[] mCartItem = new CartItem[NUM_BOOK]; // 장바구니에 담을 도서 정보 배열
+    static int mCartCount = 0; // 장바구니에 담긴 항목의 개수
 
     public static void main(String[] args) {
         String[][] mBook = new String[NUM_BOOK][NUM_ITEM]; // 도서 정보 2차원 배열
@@ -144,6 +146,9 @@ public class Welcome {
 
                 if (str.toUpperCase().equals("Y")) {
                     System.out.println(book[numId][0] + " 도서를 장바구니에 추가했습니다.");
+
+                    if (!isCartInBook(book[numId][0]))
+                        mCartItem[mCartCount++] = new CartItem(book[numId]);
                 }
                 quit = true;
             }
@@ -193,5 +198,16 @@ public class Welcome {
         book[2][4] = "컴퓨팅 사고력을 키우는 블록 코딩";
         book[2][5] = "컴퓨터입문";
         book[2][6] = "2019/06/10";
+    }
+
+    public static boolean isCartInBook(String bookId) {
+        boolean flag = false;
+        for (int i = 0; i < mCartCount; i++) {
+            if (bookId == mCartItem[i].getBookID()) {
+                mCartItem[i].setQuantity(mCartItem[i].getQuantity() + 1); // 수량 증가
+                flag = true;
+            }
+        }
+        return flag;
     }
 }
