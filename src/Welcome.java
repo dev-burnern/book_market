@@ -1,3 +1,6 @@
+import com.market.member.Admin;
+import com.market.member.User;
+
 import java.util.Scanner;
 
 public class Welcome {
