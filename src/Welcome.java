@@ -54,8 +54,10 @@ public class Welcome {
             System.out.print("메뉴 번호를 선택해주세요 :");
             int n = input.nextInt();
 
-            if  (n < 1 || n > 8)
-                System.out.println("1부터 8까지의 메뉴 번호를 선택해주세요.");
+//            if  (n < 1 || n > 8)
+//                System.out.println("1부터 8까지의 메뉴 번호를 선택해주세요.");
+            if (n < 1 || n > 9)
+                System.out.println("1부터 9까지의 메뉴 번호를 선택해주세요.");
             else {
                 switch (n) {
                     case 1:
@@ -91,6 +93,9 @@ public class Welcome {
 //                        System.out.println("프로그램을 종료합니다.");
                         menuExit();
                         quit = true;
+                        break;
+                    case 9:
+                        menuAdminLogin();
                         break;
                 } //switch문 종료
             } //if문 종료
