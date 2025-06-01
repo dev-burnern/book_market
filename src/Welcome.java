@@ -102,6 +102,7 @@ public class Welcome {
         System.out.println(" 2. 장바구니 상품 목록 보기 \t5. 장바구니의 항목 수량 줄이기");
         System.out.println(" 3. 장바구니 비우기 \t\t\t6. 장바구니의 항목 삭제하기");
         System.out.println(" 7. 영수증 표시하기 \t\t\t8. 종료");
+        System.out.println(" 9. 관리자 로그인");
         System.out.println("***********************************************************");
     }
 
