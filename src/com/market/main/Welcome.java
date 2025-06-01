@@ -6,6 +6,8 @@ import com.market.member.User;
 import com.market.bookitem.Book;
 
 import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Welcome {
     static final int NUM_BOOK = 3; // 도서의 개수에 대한 상수
@@ -252,6 +254,8 @@ public class Welcome {
             if (str.toUpperCase().equals("Y")) {
                 System.out.print("배송지를 입력해주세요 :");
                 String address = input.nextLine();
+                printBill(mUser.getName(), String.valueOf(mUser.getPhone()), address);
+
             }
             else {
                 System.out.print("배송받을 고객명을 입력하세요 :");
@@ -260,8 +264,30 @@ public class Welcome {
                 String phone = input.nextLine();
                 System.out.print("배송받을 고객의 배송지를 입력해주세요 :");
                 String address = input.nextLine();
+                printBill(name, phone, address);
             }
         }
+    }
+
+    public static void printBill(String name, String phone, String address) {
+
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("MM//dd/yyyy");
+        String strDate = formatter.format(date);
+        System.out.println();
+        System.out.println("----------------배송받을 고객 정보----------------");
+        System.out.println("고객명 : " + name + "    \t\t연락처 : " + phone);
+        System.out.println("배송지 : " + address + "    \t\t배송일 : " + strDate);
+
+        mCart.printCart(); // 장바구니에 담긴 도서 목록 출력
+
+        int sum = 0;
+        for (int i = 0; i < mCart.mCartCount; i++)
+            sum += mCart.mCartItem[i].getTotalPrice();
+
+        System.out.println("\t\t\t총 주문 금액 : " + sum + "원\n");
+        System.out.println("---------------------------------------------------");
+        System.out.println();
     }
 
     public static void menuExit() {
