@@ -196,7 +196,41 @@ public class Welcome {
     }
 
     public static void menuCartRemoveItem() {
-        System.out.println("6. 장바구니의 항목 삭제하기");
+//        System.out.println("6. 장바구니의 항목 삭제하기");
+        if (mCart.mCartCount == 0)
+            System.out.println("장바구니에 담긴 항목이 없습니다.");
+        else {
+            menuCartItemList();
+            boolean quit = false;
+            while (!quit) {
+                System.out.print("장바구니에서 삭제할 도서의 ID를 입력하세요 : ");
+                Scanner input = new Scanner(System.in);
+                String str = input.nextLine();
+                boolean flag = false;
+                int numId = -1;
+
+                for (int i = 0; i < mCart.mCartCount; i++) {
+                    if (str.equals(mCart.mCartItem[i].getBookID())) {
+                        numId = i;
+                        flag = true;
+                        break;
+                    }
+                }
+
+                if (flag) {
+                    System.out.println("장바구니에서 삭제하시곘습니까? Y | N");
+                    str = input.nextLine();
+
+                    if (str.toUpperCase().equals("Y")) {
+                        System.out.println(mCart.mCartItem[numId].getBookID() + " 도서를 장바구니에서 삭제했습니다.");
+                        mCart.removeCart(numId);
+                    }
+                    quit = true;
+                } else {
+                    System.out.println("다시 입력해 주세요");
+                }
+            }
+        }
     }
 
     public static void menuCartBill() {
