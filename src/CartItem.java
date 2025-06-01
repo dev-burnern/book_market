@@ -29,9 +29,11 @@ public class CartItem {
         updateTotalPrice();
     }
 
-//    public Book getItemBook() { return itemBook; }
-//
-//    public void setItemBook(String[] itemBook) { this.itemBook = itemBook; }
+    public Book getItemBook() { return itemBook; }
+
+    public void setItemBook(Book itemBook) {
+        this.itemBook = itemBook;
+    }
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
