@@ -107,7 +107,16 @@ public class Welcome {
     }
 
     public static void menuCartItemList() {
-        System.out.println("2. 장바구니 상품 목록 보기");
+        System.out.println("장바구니 상품 목록 : ");
+        System.out.println("----------------------------------------------------");
+        System.out.println("    도서ID \t|    수량 \t|    합계");
+        for (int i = 0; i < mCartCount; i++) {
+            System.out.print("    " + mCartItem[i].getBookID() + "\t| ");
+            System.out.print("    " + mCartItem[i].getQuantity() + "\t| ");
+            System.out.println("    " + mCartItem[i].getTotalPrice());
+            System.out.println();
+        }
+        System.out.println("----------------------------------------------------");
     }
 
     public static void menuCartClear() {
