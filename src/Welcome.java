@@ -3,13 +3,15 @@ import java.util.Scanner;
 public class Welcome {
     static final int NUM_BOOK = 3; // 도서의 개수에 대한 상수
     static final int NUM_ITEM = 7; // 각 도서에 대한 항목의 개수에 대한 상수
-    static CartItem[] mCartItem = new CartItem[NUM_BOOK]; // 장바구니에 담을 도서 정보 배열
-    static int mCartCount = 0; // 장바구니에 담긴 항목의 개수
+//    static CartItem[] mCartItem = new CartItem[NUM_BOOK]; // 장바구니에 담을 도서 정보 배열
+//    static int mCartCount = 0; // 장바구니에 담긴 항목의 개수
 
+    static Cart mCart = new Cart();
     static User mUser; // 사용자 정보 객체
 
     public static void main(String[] args) {
-        String[][] mBook = new String[NUM_BOOK][NUM_ITEM]; // 도서 정보 2차원 배열
+//        String[][] mBook = new String[NUM_BOOK][NUM_ITEM]; // 도서 정보 2차원 배열
+        Book[] mBookList = new Book[NUM_BOOK]; // 도서 정보 배열
 
         Scanner input = new Scanner(System.in);
 
@@ -75,7 +77,8 @@ public class Welcome {
                         break;
                     case 4:
 //                        System.out.println("바구니에 항목 추가하기 : ");
-                        menuCartAddItem(mBook);
+//                        menuCartAddItem(mBook);
+                        menuCartAddItem(mBookList);
                         break;
                     case 5:
 //                        System.out.println("장바구니의 항목 수량 줄이기");
@@ -120,7 +123,7 @@ public class Welcome {
     }
 
     public static void menuCartItemList() {
-        System.out.println("장바구니 상품 목록 : ");
+        /*System.out.println("장바구니 상품 목록 : ");
         System.out.println("---------------------------------------------------------");
         System.out.println("    도서ID \t\t|    수량 \t|    합계");
         for (int i = 0; i < mCartCount; i++) {
@@ -129,21 +132,29 @@ public class Welcome {
             System.out.println("    " + mCartItem[i].getTotalPrice());
             System.out.println();
         }
-        System.out.println("---------------------------------------------------------");
+        System.out.println("---------------------------------------------------------");*/
+
+        if (mCart.mCartCount >= 0)
+            mCart.printCart();
     }
 
     public static void menuCartClear() {
         System.out.println("3. 장바구니 비우기");
     }
 
-    public static void menuCartAddItem(String[][] book) {
+    public static void menuCartAddItem(Book[] booklist) {
 //        System.out.println("4. 장바구니에 항목 추가하기");
-        BookList(book);
+        BookList(booklist);
+
+        /*
         for (int i = 0; i < NUM_BOOK; i++) {
             for (int j = 0; j < NUM_ITEM; j++)
                 System.out.print(book[i][j] + " | ");
             System.out.println();
         }
+        */
+        mCart.printBookList(booklist);
+
         boolean quit = false;
         while (!quit) {
             System.out.println("장바구니에 추가할 도서의 ID를 입력하세요.");
@@ -155,7 +166,7 @@ public class Welcome {
             int numId = -1;
 
             for (int i = 0; i < NUM_BOOK; i++) {
-                if (str.equals(book[i][0])) {
+                if (str.equals(booklist[i].getBookId())) {
                     numId = i;
                     flag = true;
                     break;
@@ -167,10 +178,11 @@ public class Welcome {
                 str = input.nextLine();
 
                 if (str.toUpperCase().equals("Y")) {
-                    System.out.println(book[numId][0] + " 도서를 장바구니에 추가했습니다.");
+                    System.out.println(booklist[numId].getBookId() + " 도서를 장바구니에 추가했습니다.");
 
-                    if (!isCartInBook(book[numId][0]))
-                        mCartItem[mCartCount++] = new CartItem(book[numId]);
+                    // 카트에 넣기
+                    if (!isCartInBook(booklist[numId].getBookId()))
+                        mCart.insertBook(booklist[numId]);
                 }
                 quit = true;
             }
@@ -184,7 +196,41 @@ public class Welcome {
     }
 
     public static void menuCartRemoveItem() {
-        System.out.println("6. 장바구니의 항목 삭제하기");
+//        System.out.println("6. 장바구니의 항목 삭제하기");
+        if (mCart.mCartCount == 0)
+            System.out.println("장바구니에 담긴 항목이 없습니다.");
+        else {
+            menuCartItemList();
+            boolean quit = false;
+            while (!quit) {
+                System.out.print("장바구니에서 삭제할 도서의 ID를 입력하세요 : ");
+                Scanner input = new Scanner(System.in);
+                String str = input.nextLine();
+                boolean flag = false;
+                int numId = -1;
+
+                for (int i = 0; i < mCart.mCartCount; i++) {
+                    if (str.equals(mCart.mCartItem[i].getBookID())) {
+                        numId = i;
+                        flag = true;
+                        break;
+                    }
+                }
+
+                if (flag) {
+                    System.out.println("장바구니에서 삭제하시곘습니까? Y | N");
+                    str = input.nextLine();
+
+                    if (str.toUpperCase().equals("Y")) {
+                        System.out.println(mCart.mCartItem[numId].getBookID() + " 도서를 장바구니에서 삭제했습니다.");
+                        mCart.removeCart(numId);
+                    }
+                    quit = true;
+                } else {
+                    System.out.println("다시 입력해 주세요");
+                }
+            }
+        }
     }
 
     public static void menuCartBill() {
@@ -223,6 +269,7 @@ public class Welcome {
     }
 
     public static boolean isCartInBook(String bookId) {
+        /*
         boolean flag = false;
         for (int i = 0; i < mCartCount; i++) {
             if (bookId == mCartItem[i].getBookID()) {
@@ -231,6 +278,8 @@ public class Welcome {
             }
         }
         return flag;
+        */
+        return mCart.isCartInBook(bookId);
     }
     public static void menuAdminLogin() {
         System.out.println("관리자 정보를 입력하세요.");
@@ -248,5 +297,25 @@ public class Welcome {
             System.out.println("아이디 : " + admin.getId() + ", 비밀번호: " + admin.getPassword());
         }else
             System.out.println("관리자 정보가 일치하지 않습니다. 다시 시도해주세요.");
+    }
+
+    public static void BookList(Book[] booklist) {
+        booklist[0] = new Book("ISBN1234", "쉽게 배우는 JSP 웹 프로그래밍", 27000);
+        booklist[0].setAuthor("송미영");
+        booklist[0].setDescription("단계별로 쇼핑몰을 구현하며 배우는 JSP 웹 프로그래밍");
+        booklist[0].setCategory("IT전문서");
+        booklist[0].setReleaseDate("2018/10/08");
+
+        booklist[1] = new Book("ISBN1235", "안드로이드 프로그래밍", 33000);
+        booklist[1].setAuthor("우재남");
+        booklist[1].setDescription("실습 단계별 명쾌한 멘토링!");
+        booklist[1].setCategory("IT전문서");
+        booklist[1].setReleaseDate("2022/01/22");
+
+        booklist[2] = new Book("ISBN1236", "스크래치", 22000);
+        booklist[2].setAuthor("고광일");
+        booklist[2].setDescription("컴퓨팅 사고력을 키우는 블록 코딩");
+        booklist[2].setCategory("컴퓨터입문");
+        booklist[2].setReleaseDate("2019/06/10");
     }
 }
