@@ -6,6 +6,8 @@ public class Welcome {
     static CartItem[] mCartItem = new CartItem[NUM_BOOK]; // 장바구니에 담을 도서 정보 배열
     static int mCartCount = 0; // 장바구니에 담긴 항목의 개수
 
+    static User mUser; // 사용자 정보 객체
+
     public static void main(String[] args) {
         String[][] mBook = new String[NUM_BOOK][NUM_ITEM]; // 도서 정보 2차원 배열
 
@@ -16,6 +18,8 @@ public class Welcome {
 
         System.out.print("연락처를 입력하세요 : ");
         String userMobile = input.next();
+
+        mUser = new User(userName, userMobile);
 
 //        System.out.println("Welcome to Shopping Mall");
 //        System.out.println("Welocme to Book Market");
