@@ -99,7 +99,9 @@ public class Welcome {
 
     public static void menuGuestInfo(String name, String mobile) {
         System.out.println("현재 고객 정보 :");
-        System.out.println("이름 : " + name + ", 연락처 : " + mobile);
+//        System.out.println("이름 : " + name + ", 연락처 : " + mobile);
+        Person person = new Person(name, mobile);
+        System.out.println("이름 : " + person.getName() + ", 연락처 : " + person.getPhone());
     }
 
     public static void menuCartItemList() {
