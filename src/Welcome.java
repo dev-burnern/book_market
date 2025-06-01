@@ -9,7 +9,8 @@ public class Welcome {
     static User mUser; // 사용자 정보 객체
 
     public static void main(String[] args) {
-        String[][] mBook = new String[NUM_BOOK][NUM_ITEM]; // 도서 정보 2차원 배열
+//        String[][] mBook = new String[NUM_BOOK][NUM_ITEM]; // 도서 정보 2차원 배열
+        Book[] mBookList = new Book[NUM_BOOK]; // 도서 정보 배열
 
         Scanner input = new Scanner(System.in);
 
@@ -75,7 +76,8 @@ public class Welcome {
                         break;
                     case 4:
 //                        System.out.println("바구니에 항목 추가하기 : ");
-                        menuCartAddItem(mBook);
+//                        menuCartAddItem(mBook);
+                        menuCartAddItem(mBookList);
                         break;
                     case 5:
 //                        System.out.println("장바구니의 항목 수량 줄이기");
@@ -248,5 +250,25 @@ public class Welcome {
             System.out.println("아이디 : " + admin.getId() + ", 비밀번호: " + admin.getPassword());
         }else
             System.out.println("관리자 정보가 일치하지 않습니다. 다시 시도해주세요.");
+    }
+
+    public static void BookList(Book[] booklist) {
+        booklist[0] = new Book("ISBN1234", "쉽게 배우는 JSP 웹 프로그래밍", 27000);
+        booklist[0].setAuthor("송미영");
+        booklist[0].setDescription("단계별로 쇼핑몰을 구현하며 배우는 JSP 웹 프로그래밍");
+        booklist[0].setCategory("IT전문서");
+        booklist[0].setReleaseDate("2018/10/08");
+
+        booklist[1] = new Book("ISBN1235", "안드로이드 프로그래밍", 33000);
+        booklist[1].setAuthor("우재남");
+        booklist[1].setDescription("실습 단계별 명쾌한 멘토링!");
+        booklist[1].setCategory("IT전문서");
+        booklist[1].setReleaseDate("2022/01/22");
+
+        booklist[2] = new Book("ISBN1236", "스크래치", 22000);
+        booklist[2].setAuthor("고광일");
+        booklist[2].setDescription("컴퓨팅 사고력을 키우는 블록 코딩");
+        booklist[2].setCategory("컴퓨터입문");
+        booklist[2].setReleaseDate("2019/06/10");
     }
 }
