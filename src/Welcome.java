@@ -229,6 +229,7 @@ public class Welcome {
     }
 
     public static boolean isCartInBook(String bookId) {
+        /*
         boolean flag = false;
         for (int i = 0; i < mCartCount; i++) {
             if (bookId == mCartItem[i].getBookID()) {
@@ -237,6 +238,8 @@ public class Welcome {
             }
         }
         return flag;
+        */
+        return mCart.isCartInBook(bookId);
     }
     public static void menuAdminLogin() {
         System.out.println("관리자 정보를 입력하세요.");
