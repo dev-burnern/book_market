@@ -13,15 +13,15 @@ public class CartItem {
         this.quantity = 1; // 기본 수량은 1로 설정
         updateTotalPrice();
     }
-
-    public String getItemBook() {
+    */
+    public String getBookID() {
         return bookID;
     }
 
-    public void setItemBook(String bookID) {
+    public void setBookID(String bookID) {
         this.bookID = bookID;
     }
-    */
+
     public CartItem(Book booklist) {
         this.itemBook = booklist;
         this.bookID = booklist.getBookId();
@@ -29,11 +29,9 @@ public class CartItem {
         updateTotalPrice();
     }
 
-    public Book getItemBook() { return itemBook; }
-
-    public void setItemBook(Book itemBook) {
-        this.itemBook = itemBook;
-    }
+//    public Book getItemBook() { return itemBook; }
+//
+//    public void setItemBook(String[] itemBook) { this.itemBook = itemBook; }
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
