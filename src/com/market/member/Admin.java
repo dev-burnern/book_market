@@ -1,4 +1,6 @@
-public class Admin extends Person{
+package com.market.member;
+
+public class Admin extends Person {
     private String id = "admin";
     private String password = "admin123";
 
