@@ -8,6 +8,7 @@ import com.market.exception.CartException;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -372,6 +373,18 @@ public class Welcome {
                 writeBook[5] = input.nextLine(); // 카테고리
                 System.out.print("출판일 : ");
                 writeBook[6] = input.nextLine(); // 출판일
+
+                try{
+                    FileWriter fw = new FileWriter("book.txt", true);
+
+                    for (int i = 0; i < 7; i++) {
+                        fw.write(writeBook[i] + "\n");
+                        fw.close();
+                        System.out.println("새 도서 정보가 저장되었습니다.");
+                    }
+            }catch (Exception e) {
+                    System.out.println(e);
+                }
             }
             else {
                 System.out.println("이름 : " + admin.getName() + ", 연락처: " + admin.getPhone());
