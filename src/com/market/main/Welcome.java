@@ -259,12 +259,14 @@ public class Welcome {
                     quit = true;
                 } else {
                     System.out.println("다시 입력해 주세요");
+                    ;
                 }
             }
         }
     }
 
     public static void menuCartBill() throws CartException {
+
 //        System.out.println("7. 영수증 표시하기");
         if (mCart.mCartCount == 0) throw new CartException("장바구니에 항목이 없습니다.");
 
