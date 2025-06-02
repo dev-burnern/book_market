@@ -17,10 +17,10 @@ public class Cart implements CartInterface {
             System.out.print(booklist[i].getBookId() + " | ");
             System.out.print(booklist[i].getName() + " | ");
             System.out.print(booklist[i].getUnitPrice() + " | ");
-            System.out.println(booklist[i].getAuthor() + " | ");
-            System.out.println(booklist[i].getDescription() + " | ");
+            System.out.print(booklist[i].getAuthor() + " | ");
+            System.out.print(booklist[i].getDescription() + " | ");
             System.out.print(booklist[i].getCategory() + " | ");
-            System.out.println(booklist[i].getReleaseDate());
+            System.out.print(booklist[i].getReleaseDate());
             System.out.println();
         }
     }
