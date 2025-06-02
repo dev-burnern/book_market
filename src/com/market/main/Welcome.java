@@ -419,7 +419,7 @@ public class Welcome {
 
     public static int totalFileToBookList() {
         try {
-            FileReader fr = new FileReader("booklist.txt");
+            FileReader fr = new FileReader("book.txt");
             BufferedReader reader = new BufferedReader(fr);
 
             String str;
