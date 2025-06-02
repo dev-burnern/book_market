@@ -49,68 +49,72 @@ public class Welcome {
         System.out.println("***********************************************************");
          */
 
-        menuIntroduction();
-
-
 //        System.out.println(n + "번 메뉴를 선택하셨습니다.");
 
         boolean quit = false;
         while (!quit) {
-            System.out.println("***********************************************************");
+            menuIntroduction();
 
+//            System.out.println("***********************************************************");
             System.out.println("\t\t\t\t" + greeting);
             System.out.println("\t\t\t\t" + tagline);
             System.out.println("***********************************************************");
 
-            System.out.print("메뉴 번호를 선택해주세요 :");
-            int n = input.nextInt();
+            try {
+                System.out.print("메뉴 번호를 선택해주세요 :");
+                int n = input.nextInt();
 
 //            if  (n < 1 || n > 8)
 //                System.out.println("1부터 8까지의 메뉴 번호를 선택해주세요.");
-            if (n < 1 || n > 9)
-                System.out.println("1부터 9까지의 메뉴 번호를 선택해주세요.");
-            else {
-                switch (n) {
-                    case 1:
+                if (n < 1 || n > 9)
+                    System.out.println("1부터 9까지의 메뉴 번호를 선택해주세요.");
+                else {
+                    switch (n) {
+                        case 1:
 //                        System.out.println("현재 고객 정보 :");
 //                        System.out.println("이름 : " + userName + ", 연락처 : " + userMobile);
-                        menuGuestInfo(userName, userMobile);
-                        break;
-                    case 2:
+                            menuGuestInfo(userName, userMobile);
+                            break;
+                        case 2:
 //                        System.out.println("장바구니 상품 목록 보기 :");
-                        menuCartItemList();
-                        break;
-                    case 3:
+                            menuCartItemList();
+                            break;
+                        case 3:
 //                        System.out.println("장바구니 비우기");
-                        menuCartClear();
-                        break;
-                    case 4:
+                            menuCartClear();
+                            break;
+                        case 4:
 //                        System.out.println("바구니에 항목 추가하기 : ");
 //                        menuCartAddItem(mBook);
-                        menuCartAddItem(mBookList);
-                        break;
-                    case 5:
+                            menuCartAddItem(mBookList);
+                            break;
+                        case 5:
 //                        System.out.println("장바구니의 항목 수량 줄이기");
-                        menuCartRemoveItemCount();
-                        break;
-                    case 6:
+                            menuCartRemoveItemCount();
+                            break;
+                        case 6:
 //                        System.out.println("장바구니의 항목 삭제하기");
-                        menuCartRemoveItem();
-                        break;
-                    case 7:
+                            menuCartRemoveItem();
+                            break;
+                        case 7:
 //                        System.out.println("영수증 표시하기");
-                        menuCartBill();
-                        break;
-                    case 8:
+                            menuCartBill();
+                            break;
+                        case 8:
 //                        System.out.println("프로그램을 종료합니다.");
-                        menuExit();
-                        quit = true;
-                        break;
-                    case 9:
-                        menuAdminLogin();
-                        break;
-                } //switch문 종료
-            } //if문 종료
+                            menuExit();
+                            quit = true;
+                            break;
+                        case 9:
+                            menuAdminLogin();
+                            break;
+                    } //switch문 종료
+                } //if문 종료
+            } // try문 종료
+            catch (Exception e) {
+                System.out.println("올바르지 않은 메뉴 선택으로 종료합니다.");
+                quit = true;
+            } // catch문 종료
         } //while문 종료
     } // main 메소드 종료
     public static void menuIntroduction() {
