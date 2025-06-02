@@ -6,6 +6,8 @@ import com.market.member.User;
 import com.market.bookitem.Book;
 import com.market.exception.CartException;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -369,5 +371,25 @@ public class Welcome {
         booklist[2].setReleaseDate("2019/06/10");
     }
 
+    public static int totalFileToBookList() {
+        try {
+            FileReader fr = new FileReader("booklist.txt");
+            BufferedReader reader = new BufferedReader(fr);
 
+            String str;
+            int num = 0;
+
+            while ((str = reader.readLine()) != null) {
+                String[] bookData = str.split(",");
+                if (str.contains("ISBN"))
+                    num++;
+            }
+            reader.close();
+            fr.close();
+            return num;
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+        return 0;
+    }
 }
