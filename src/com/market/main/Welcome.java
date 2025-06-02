@@ -352,6 +352,8 @@ public class Welcome {
     }
 
     public static void BookList(Book[] booklist) {
+        setFileToBookList(booklist);
+        /*
         booklist[0] = new Book("ISBN1234", "쉽게 배우는 JSP 웹 프로그래밍", 27000);
         booklist[0].setAuthor("송미영");
         booklist[0].setDescription("단계별로 쇼핑몰을 구현하며 배우는 JSP 웹 프로그래밍");
@@ -369,6 +371,7 @@ public class Welcome {
         booklist[2].setDescription("컴퓨팅 사고력을 키우는 블록 코딩");
         booklist[2].setCategory("컴퓨터입문");
         booklist[2].setReleaseDate("2019/06/10");
+        */
     }
 
     public static int totalFileToBookList() {
