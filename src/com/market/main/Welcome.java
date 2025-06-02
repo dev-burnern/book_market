@@ -23,7 +23,9 @@ public class Welcome {
 
     public static void main(String[] args) {
 //        String[][] mBook = new String[NUM_BOOK][NUM_ITEM]; // 도서 정보 2차원 배열
-        Book[] mBookList = new Book[NUM_BOOK]; // 도서 정보 배열
+//        Book[] mBookList = new Book[NUM_BOOK]; // 도서 정보 배열
+        Book[] mBookList;
+        int mTotalBook = 0; // 총 도서 개수
 
         Scanner input = new Scanner(System.in);
 
@@ -89,6 +91,8 @@ public class Welcome {
                         case 4:
 //                        System.out.println("바구니에 항목 추가하기 : ");
 //                        menuCartAddItem(mBook);
+                            mTotalBook = totalFileToBookList();
+                            mBookList = new Book[mTotalBook]; // 도서 정보 배열 생성
                             menuCartAddItem(mBookList);
                             break;
                         case 5:
