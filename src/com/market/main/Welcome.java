@@ -392,4 +392,34 @@ public class Welcome {
         }
         return 0;
     }
+
+    public static void setFileToBookList(Book[] booklist) {
+        try {
+            FileReader fr = new FileReader("book.txt");
+            BufferedReader reader = new BufferedReader(fr);
+
+            String str2;
+            String[] readBook = new String[7];
+            int count = 0;
+
+            while ((str2 = reader.readLine()) != null) {
+                if (str2.contains("ISBN")) {
+                    readBook[0] = str2;
+                    readBook[1] = reader.readLine(); // 책 제목
+                    readBook[2] = reader.readLine(); // 가격
+                    readBook[3] = reader.readLine(); // 저자
+                    readBook[4] = reader.readLine(); // 설명
+                    readBook[5] = reader.readLine(); // 카테고리
+                    readBook[6] = reader.readLine(); // 출판일
+                }
+
+            booklist[count++] = new Book(readBook[0], readBook[1], Integer.parseInt(readBook[2]),
+                    readBook[3], readBook[4], readBook[5], readBook[6]);
+            } // while문 종료
+            reader.close();
+            fr.close();
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }
