@@ -349,8 +349,34 @@ public class Welcome {
 
         Admin admin = new Admin(mUser.getName(), mUser.getPhone());
         if (adminId.equals(admin.getId()) && adminPw.equals(admin.getPassword())) {
-            System.out.println("이름 : " + admin.getName() + ", 연락처: " + admin.getPhone());
-            System.out.println("아이디 : " + admin.getId() + ", 비밀번호: " + admin.getPassword());
+            String[] writeBook = new String[7];
+            System.out.println("도서 정보를 추가하겠습니까? Y | N");
+            String str = input.next();
+
+            if (str.toUpperCase().equals("Y")) {
+                Date date = new Date();
+                SimpleDateFormat formatter = new SimpleDateFormat("yyMMddhhmmss");
+                String strDate = formatter.format(date);
+                writeBook[0] = "ISBN" + strDate; // ISBN 번호 생성
+                System.out.println("도서ID : " + writeBook[0]);
+                String st1 = input.nextLine();
+                System.out.print("도서 제목 : ");
+                writeBook[1] = input.nextLine(); // 도서 제목
+                System.out.print("도서 가격 : ");
+                writeBook[2] = input.nextLine(); // 도서 가격
+                System.out.print("저자 : ");
+                writeBook[3] = input.nextLine(); // 저자
+                System.out.print("설명 : ");
+                writeBook[4] = input.nextLine(); // 설명
+                System.out.print("카테고리 : ");
+                writeBook[5] = input.nextLine(); // 카테고리
+                System.out.print("출판일 : ");
+                writeBook[6] = input.nextLine(); // 출판일
+            }
+            else {
+                System.out.println("이름 : " + admin.getName() + ", 연락처: " + admin.getPhone());
+                System.out.println("아이디 : " + admin.getId() + ", 비밀번호: " + admin.getPassword());
+            }
         }else
             System.out.println("관리자 정보가 일치하지 않습니다. 다시 시도해주세요.");
     }
