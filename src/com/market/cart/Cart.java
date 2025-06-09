@@ -52,7 +52,6 @@ public class Cart implements CartInterface {
             System.out.print("    " + mCartItem.get(i).getBookID() + "\t\t");
             System.out.print("    " + mCartItem.get(i).getQuantity() + "\t\t");
             System.out.print("    " + mCartItem.get(i).getTotalPrice() + "\n");
-            System.out.println("  ");
         }
         System.out.println("---------------------------------------------------------");
     }
