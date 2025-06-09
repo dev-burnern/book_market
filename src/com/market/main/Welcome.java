@@ -202,7 +202,7 @@ public class Welcome {
             boolean flag = false;
             int numId = -1;
 
-            for (int i = 0; i < NUM_BOOK; i++) {
+            for (int i = 0; i < booklist.length; i++) {
                 if (str.equals(booklist[i].getBookId())) {
                     numId = i;
                     flag = true;
@@ -379,9 +379,9 @@ public class Welcome {
 
                     for (int i = 0; i < 7; i++) {
                         fw.write(writeBook[i] + "\n");
-                        fw.close();
                         System.out.println("새 도서 정보가 저장되었습니다.");
                     }
+                    fw.close();
             }catch (Exception e) {
                     System.out.println(e);
                 }
